@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mujocoinclude>
+  <body name="microroot" childclass="microwave">
+    <geom mesh="micro"/>
+    <geom material="micro_metal" mesh="microbutton"/>
+    <geom material="micro_metal" mesh="microfeet"/>
+    <geom class="micro_collision" pos="-0.316 0.023 0.187" size="0.029 0.199 0.187" type="box" mass=".5"/>
+    <geom class="micro_collision" pos="0.236 0.023 0.187" size="0.109 0.199 0.187" type="box" mass=".5"/>
+    <geom class="micro_collision" pos="-0.081 0.191 0.187" size="0.207 0.03 0.187" type="box" mass=".5"/>
+    <geom class="micro_collision" pos="-0.08 -0.007 0.355" size="0.207 0.169 0.019" type="box" mass=".5"/>
+    <geom class="micro_collision" pos="-0.08 -0.008 0.024" size="0.207 0.168 0.024" type="box" mass=".5"/>
+    <geom class="micro_collision" pos="0.26 -0.197 0.187" size="0.085 0.024 0.187" type="box" mass=".5"/>
+    <body name="microdoorroot" pos="-0.345 -0.206 0.192">
+      <joint axis="1 0 0" limited="true" name="microjoint" pos="0 0 -0.15" range="0 1.5" frictionloss="100" damping="100"/>
+      <geom mesh="microdoor" pos="0.345 0.176 -0.192"/>
+      <geom material="micro_window" mesh="microwindow" pos="0.345 0.176 -0.192"/>
+      <geom conaffinity="1" condim="1" contype="1" group="4" size="0.2 0.024 0.165" type="box" mass="0.001" pos="0.245 -0.02 0.0"/>
+      <geom material="micro_metal" euler="0 1.57 0" pos="0.26 -0.148 0.13" size="0.02 0.24" type="capsule"/>
+      <geom material="micro_metal" euler="1.57 0 0" pos="0.475 -0.075 .13" size="0.02 0.06" type="capsule"/>
+      <geom material="micro_metal" euler="1.57 0 0" pos="0.05 -0.075 .13" size="0.02 0.06" type="capsule"/>
+
+      <geom class="micro_collision" euler="0 1.57 0" pos="0.26 -0.148 0.13" size="0.02 0.24" type="capsule" mass="0.001"/>
+      <geom class="micro_collision" euler="1.57 0 0" pos="0.475 -0.075 .13" size="0.02 0.06" type="capsule" mass="0.001"/>
+      <geom class="micro_collision" euler="1.57 0 0" pos="0.05 -0.075 .13" size="0.02 0.06" type="capsule" mass="0.001"/>
+
+<!--      <geom class="micro_collision" pos="0.259 -0.026 0" size="0.259 0.024 0.185" type="box" mass="0.01"/>-->
+      <site type="sphere" name="toaster_site" pos="0.28 -0.108 0.13" size=".01" group="3" rgba="1 1 0 1"/>
+    </body>
+
+    <body name="tray" pos="-0.345 -0.156 0.192">
+      <joint axis="0 1 0" type="slide" name="tray" pos="0 0 0" range="-0.25 0"/>
+      <geom type="box" size="0.188 0.01 0.2" rgba="1 0 0 1" pos="0.265 0.176 0.0" euler="1.57 0 0"/>
+      <geom type="box" size="0.02 0.1 0.05" rgba="1 0 0 1" pos="0.265 .025 0.0" euler="1.57 0 0"/>
+
+      <geom class="micro_collision"  type="box" size="0.188 0.01 0.2" pos="0.265 0.176 0.0" euler="1.57 0 0" mass="0.20"/>
+      <geom class="micro_collision"  type="box" size="0.02 0.1 0.05" pos="0.265 .025 0.0" euler="1.57 0 0" mass="0.20"/>
+      <site type="sphere" name="tray_site" pos="0.265 .025 0.0" size="0.01" group="3" rgba="1 1 0 1"/>
+    </body>
+  </body>
+</mujocoinclude>

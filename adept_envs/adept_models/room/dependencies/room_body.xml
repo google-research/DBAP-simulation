@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<mujocoinclude>
+  <body name="Wall_01" pos="1.6 0.3 0">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Wall_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Wall_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Wall_02" pos="-3.318 -3.2 0" axisangle="0 0 1 3.141">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Wall_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Wall_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Wall_03" pos="-1.447 0.3 0">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Wall_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Wall_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Wall_04" pos="-2.1 -1.15 0" axisangle="0 0 1 1.571">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Wall_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Wall_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Wall_05" pos="-3.9 -1.45 0" axisangle="0 0 1 1.571">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Wall_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Wall_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Doorway_01" pos="-2.1 0.3 0" axisangle="0 0 1 1.571">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Doorway_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Doorway_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Window_02" pos="-3.9 0.3 0" axisangle="0 0 1 1.571">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Window_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Window_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Window_01" pos="-0.27 -3.2 0" axisangle="0 0 1 3.141">
+    <geom type="mesh" rgba="1 1 1 1" mesh="Window_Top" group="1" contype="0" conaffinity="0"/>
+    <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="Window_Bottom" group="1" contype="0" conaffinity="0"/>
+  </body>
+  <body name="Ceiling" pos="-1.5 -1.5 3.048" axisangle="0 0 1 1.571">
+    <geom type="box" rgba="1 1 1 1" size="2 3 0.1" group="1" contype="0" conaffinity="0"/>
+  </body>
+</mujocoinclude>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<mujocoinclude>
+  <asset>
+    <mesh name="Doorway_Top" file="../room/dependencies/meshes/Doorway_Top.stl" scale="0.01 0.01 0.01"/>
+    <mesh name="Doorway_Bottom" file="../room/dependencies/meshes/Doorway_Bottom.stl" scale="0.01 0.01 0.01"/>
+    <mesh name="Wall_Top" file="../room/dependencies/meshes/Wall_Top.stl" scale="0.01 0.01 0.01"/>
+    <mesh name="Wall_Bottom" file="../room/dependencies/meshes/Wall_Bottom.stl" scale="0.01 0.01 0.01"/>
+    <mesh name="Window_Top" file="../room/dependencies/meshes/Window_Top.stl" scale="0.01 0.01 0.01"/>
+    <mesh name="Window_Bottom" file="../room/dependencies/meshes/Window_Bottom.stl" scale="0.01 0.01 0.01"/>
+    <texture name="groundplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="200" height="200"/>
+    <material name="groundplane" texture="groundplane" texrepeat="20 20"/>
+  </asset>
+  <default>
+    <default class="Light">
+      <light directional="false" castshadow="true" attenuation="0.05 0.05 0.05" cutoff="50" exponent="15" diffuse=".7 .7 .7" specular=".3 .3 .3"/>
+    </default>
+  </default>
+</mujocoinclude>

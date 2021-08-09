@@ -1,0 +1,32 @@
+<mujocoinclude>
+  <body childclass="cabinet_hinge">
+    <body name="cabinet_link">
+      <geom mesh="Body" material="cab_grey"/>
+      <geom mesh="Motor Bracket-1" pos="-0.165 -0.149 0.371" material="cab_black"/>
+      <geom mesh="Motor Bracket-1" euler="0 0 3.142" pos="-0.12 -0.149 0.371" material="cab_black"/>
+      <geom mesh="Shaft-1" pos="-0.142 -0.165 0.341" material="cab_black"/>
+      <geom mesh="Shaft-1" pos="-0.142 -0.165 0.021" material="cab_black"/>
+      <geom mesh="Wheel Driven 2-1" pos="-0.142 -0.165 0.354" material="cab_black"/>
+      <geom mesh="Wheel Shim2-1" pos="-0.142 -0.165 0.36" material="cab_black"/>
+      <geom mesh="X-430" pos="-0.142 -0.153 0.38" material="cab_black"/>
+      <geom pos="-0.166 0 0.175" type="box" class="collision" size="0.009 0.175 0.175" mass=".3"/>
+      <geom pos="0.166 0 0.175" type="box" class="collision" size="0.009 0.175 0.175" mass=".3"/>
+      <geom pos="0 0 0.341" type="box" class="collision" size="0.16 0.175 0.009" mass=".3"/>
+      <geom pos="0 0 0.009" type="box" class="collision" size="0.16 0.175 0.009" mass=".3"/>
+      <geom pos="0 0.159 0.175" type="box" class="collision" size="0.16 0.004 0.161" mass=".3"/>
+      <geom pos="-0.142 -0.153 0.376" type="box" class="collision" size="0.018 0.024 0.026" mass=".2"/>
+      <geom pos="-0.142 -0.149 0.352" type="box" class="collision" size="0.031 0.017 0.002" mass=".05"/>
+      <body name="cabinet_hinge_link" pos="-0.142 -0.165 0.175">
+        <joint name="cabinet_hinge_joint" axis="0 0 1" limited="true" range="-2.094 0"/>
+        <geom mesh="cabinet hingedoor - Door" pos="0.142 0.001 0" material="cab_grey"/>
+        <geom mesh="cabinet hingedoor - Handle-1" pos="0.24 -0.008 0" material="cab_white"/>
+        <geom pos="0.148 0.001 0" type="box" class="collision" size="0.15 0.009 0.156" mass=".75"/>
+        <geom pos="0.24 -0.035 0.102" euler="1.571 0 0" type="capsule" class="collision" size="0.013 0.028" mass=".4"/>
+        <geom pos="0.24 -0.035 -0.102" euler="1.571 0 0" type="capsule" class="collision" size="0.013 0.028" mass=".4"/>
+        <geom pos="0.24 -0.077 0.09" euler="-0.785 0 0" type="capsule" class="collision" size="0.013 0.016" mass=".2"/>
+        <geom pos="0.24 -0.09 0" type="capsule" class="collision" size="0.013 0.074" mass=".8"/>
+        <geom pos="0.24 -0.077 -0.092" euler="0.785 0 0" type="capsule" class="collision" size="0.013 0.016" mass=".2"/>
+      </body>
+    </body>
+  </body>
+</mujocoinclude>

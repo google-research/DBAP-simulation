@@ -1,0 +1,12 @@
+# General
+.DS_Store
+*.swp
+*.profraw
+**/katamari-robotics/*
+
+# Editors
+.vscode
+.idea
+
+__pycache__/
+

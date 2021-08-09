@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<mujoco model="cabinet_hinge">
+  <include file="assets/cabinet_hinge_dependencies.xml"/>
+  <worldbody>
+    <include file="assets/cabinet_link.xml"/>
+    <light directional="true" attenuation=".01 .01 .01" diffuse=".7 .7 .65" specular="0.3 0.3 0.3" pos="2 -2 4" dir="-.5 .5 -1"/>
+    <light directional="false" attenuation=".15 .15 .15" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="-6 -6 5" dir="-.5 .5 -1"/>
+    <light directional="false" attenuation=".15 .15 .15" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="-6 -6 5" dir="-.5 .5 -1"/>
+    <light directional="false" attenuation=".15 .15 .15" diffuse=".3 .3 .3" specular="0.3 0.3 0.3" pos="6 6 5" dir="-.5 .5 -1"/>
+  </worldbody>
+</mujoco>

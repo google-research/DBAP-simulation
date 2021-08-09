@@ -1,0 +1,29 @@
+<mujocoinclude>
+  <asset>
+    <material name="collision" rgba="0.3 0.3 1 0.5"/>
+    <material name="cab_black" shininess="0.5" rgba="0.15 0.15 0.15 1.0"/>
+    <material name="cab_grey" shininess="0.5" rgba="0.427 0.427 0.427 1.0"/>
+    <material name="cab_white" shininess="0.5" rgba="0.8 0.8 0.8 1.0"/>
+    <mesh name="Body" file="../kitchen_real/cabinet_assembly/meshes/Body.stl"/>
+    <mesh name="cabinet hingedoor - Door" file="../kitchen_real/cabinet_assembly/meshes/cabinet hingedoor - Door.stl"/>
+    <mesh name="cabinet hingedoor - Handle-1" file="../kitchen_real/cabinet_assembly/meshes/cabinet hingedoor - Handle-1.stl"/>
+    <mesh name="Motor Bracket-1" file="../kitchen_real/cabinet_assembly/meshes/Motor Bracket-1.stl"/>
+    <mesh name="Shaft-1" file="../kitchen_real/cabinet_assembly/meshes/Shaft-1.stl"/>
+    <mesh name="Wheel Driven 2-1" file="../kitchen_real/cabinet_assembly/meshes/Wheel Driven 2-1.stl"/>
+    <mesh name="Wheel Shim2-1" file="../kitchen_real/cabinet_assembly/meshes/Wheel Shim2-1.stl"/>
+    <mesh name="X-430" file="../kitchen_real/cabinet_assembly/meshes/X-430.stl"/>
+  </asset>
+  <default>
+    <default class="cabinet_hinge">
+      <joint limited="true" damping="1"/>
+      <geom contype="0" conaffinity="0" group="1" type="mesh"/>
+      <position ctrllimited="true"/>
+      <default class="collision">
+        <geom contype="1" conaffinity="1" condim="4" group="4" material="collision"/>
+      </default>
+    </default>
+  </default>
+  <actuator>
+    <position name="cabinet_hinge_link" kp="2" joint="cabinet_hinge_joint" class="cabinet_hinge" ctrlrange="-2.094 0"/>
+  </actuator>
+</mujocoinclude>

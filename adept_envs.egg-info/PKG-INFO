@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: adept-envs
+Version: 0.1.2
+Summary: Robotics reinforcement learning benchmark tasks with cost-effective robots.
+Home-page: https://adept.googlesource.com/adept_envs
+License: Apache 2.0
+Description: # Adept Environments
+        
+        `adept_envs` is a collection of environments/tasks simulated with the
+        [Mujoco](http://www.mujoco.org/) physics engine and are compliant to the OpenAI
+        `gym` API.
+        
+        ## Installation
+        
+        ```bash
+        git clone "sso://adept/adept_envs"
+        cd adept_envs
+        pip install -e .
+        ```
+        
+        To run on hardware, also install:
+        ```bash
+        pip install dynamixel_sdk @ https://github.com/ROBOTIS-GIT/DynamixelSDK/archive/3.7.0.zip#subdirectory=python
+        ```
+        
+        ## Example Usage
+        
+        ```python
+        import adept_envs
+        import gym
+        
+        env = gym.make('DClawTurnFixed-v0')
+        ```
+        
+        You can render an environment by running:
+        
+        ```bash
+        python -m adept_envs.scripts.rollout -e 'DClawTurnFixed-v0' --render
+        ```
+        
+        ## Open-Source
+        
+        A subset of Adept Environments is released under the name "ROBEL" at:
+        https://github.com/google-research/robel
+        
+        Additionally, Adept Models is released under the name "ROBEL Scenes" at:
+        https://github.com/google-research/robel-scenes
+        
+        ### Steps to update GitHub
+        
+        1. Update ROBEL Scenes GitHub repo.
+        
+            ```bash
+            cd path/to/adept_models
+            copybara copy.bara.sky default . --folder-dir=path/to/robel-scenes
+        
+            cd path/to/robel-scenes
+            git add .
+            git commit
+            git push origin master
+            ```
+        
+        2. Update ROBEL GitHub repo.
+        
+            **NOTE**: Remember to increment the version number in `setup.py`
+        
+            ```bash
+            cd path/to/adept_envs
+            copybara copy.bara.sky default . --folder-dir=path/to/robel
+        
+            cd path/to/robel-scenes
+            cd robel/robel-scenes
+            git pull
+            cd ../..
+            git add .
+            git commit
+            git push origin master
+            ```
+        
+        3. Upload package to PyPI.
+        
+            ```bash
+            cd path/to/robel
+            python setup.py sdist bdist_wheel
+        
+            # Upload to test PyPI.
+            twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+            # Install from test PyPI.
+            pip install --index-url https://test.pypi.org/simple/ --no-deps robel
+            # Make sure all tests pass.
+            python -m unittest discover -s robel -p '*_test.py'
+        
+            # Upload to production PyPI.
+            twine upload dist/*
+            # Install from production PyPI.
+            pip install robel
+            # Make sure all tests pass.
+            python -m unittest discover -s robel -p '*_test.py'
+            ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Intended Audience :: Science/Research
+Requires-Python: >=3.5.3
+Description-Content-Type: text/markdown

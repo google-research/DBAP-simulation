@@ -1,0 +1,17 @@
+<mujocoinclude>
+  <body childclass="knob_assembly">
+    <body name="knob_assembly_link">
+      <geom mesh="knob_assembly" pos="0 -0.001 0" material="white"/>
+      <geom pos="0 0 0.03" type="box" class="collision" size="0.05 0.051 0.03"/>
+      <geom pos="0.061 0 0.003" type="box" class="collision" size="0.011 0.038 0.003"/>
+      <geom pos="-0.061 0 0.003" type="box" class="collision" size="0.011 0.038 0.003"/>
+      <body name="knob_link" pos="0 0 0.061">
+        <joint name="knob_joint" axis="0 0 1" limited="true" range="-1.57 1.57"/>
+        <geom mesh="Knob" material="white"/>
+        <geom mesh="Knob_mesh" material="white"/>
+        <geom mesh="knob_collision0" type="mesh" class="collision"/>
+        <geom mesh="knob_collision1" pos="0 0 0.028" type="mesh" class="collision"/>
+      </body>
+    </body>
+  </body>
+</mujocoinclude>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<mujoco model="franka_kitchen">
+  <size njmax="1000" nconmax="1000"/>
+  <include file="../../adept_models/scenes/basic_scene.xml"/>
+  <include file="../../adept_models/franka/assets/assets.xml"/>
+  <include file="../../adept_models/franka/assets/actuator0.xml"/>
+  <include file="../../adept_models/kitchen/assets/microwave_asset.xml"/>
+  <include file="../../adept_models/kitchen/assets/hingecabinet_asset.xml"/>
+  <include file="../../adept_models/kitchen/assets/slidecabinet_asset.xml"/>
+<!--  <visual>-->
+<!--    <global offwidth="2560" offheight="1920"/>-->
+<!--    <quality shadowsize="4096" offsamples="8"/>-->
+<!--    <map force="0.1" fogend="5"/>-->
+<!--  </visual>-->
+  <compiler angle="radian" meshdir="../../adept_models/franka" texturedir="../../adept_models/franka"/>
+  <compiler inertiafromgeom="auto" inertiagrouprange="3 5"/>
+  <equality>
+    <weld body1="vive_controller" body2="panda0_link7" solref="0.02 1" solimp=".4 .85 .1"/>
+  </equality>
+  <worldbody>
+    <!-- Mocap -->
+    <body name="vive_controller" mocap="true" pos="0 0 2.89" euler="-1.57 0 -.785">
+      <geom type="box" group="2" pos="0 0 .142" size="0.02 0.10 0.03" contype="0" conaffinity="0" rgba=".9 .7 .95 0.5" euler="0 0 -.785"/>
+      <geom type="box" group="1" pos="0 0 .142" size="0.02 0.10 0.03" contype="0" conaffinity="0" rgba=".9 .7 .95 0.5" euler="0 0 -.785"/>
+    </body>
+    <site name="target" pos="-0.3 0.3 2.4" size="0.03" rgba="1 0 0 1"/>
+    <camera name="left_cap" pos="-1.2 -0.5 1.8" quat="0.78 0.49 -0.22 -0.32"/>
+    <camera name="right_cap" pos="1.2 -0.5 1.8" quat="0.76 0.5 0.21 0.35"/>
+    <!-- Robot -->
+    <body pos="0. 0 1.8" euler="0 0 1.57">
+      <geom type="cylinder" size=".120 .90" pos="-.04 0 -0.90" class="panda_viz"/>
+      <include file="../../adept_models/franka/assets/chain0.xml"/>
+    </body>
+    <body name="desk" pos="-0.1 0.75 0">
+      <body name="slidecabinet" pos="0.4 0.3 2.6">
+        <include file="../../adept_models/kitchen/assets/slidecabinet_chain.xml"/>
+      </body>
+      <body name="hingecabinet" pos="-0.504 0.28 2.6">
+        <include file="../../adept_models/kitchen/assets/hingecabinet_chain.xml"/>
+      </body>
+      <body name="microwave" pos="-0.750 -0.025 1.6" euler="0 0 0.3">
+        <include file="../../adept_models/kitchen/assets/microwave_chain.xml"/>
+      </body>
+      <body name="marker">
+        <geom conaffinity="0" contype="0" group="1" size="0.05" type="sphere" mass="0.001"/>
+      </body>
+    </body>
+  </worldbody>
+  <keyframe>
+    <key qpos="0.16 -1.76 1.84 -2.51 0.36 0.79 1.55 0.00 0.0 0.0 0.0 0.0 0.0"/>
+  </keyframe>
+</mujoco>
